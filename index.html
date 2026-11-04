@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Uma carta pra Raquel ♥</title>
+  <meta name="theme-color" content="#12061f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,300;1,9..144,400&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div id="progress" aria-hidden="true"></div>
+
+  <main id="stage">
+
+    <!-- 0 · Envelope -->
+    <section class="scene center" id="s0" aria-label="Carta fechada">
+      <div class="env-wrap">
+        <button class="envelope" id="envelope" type="button" aria-label="Abrir a carta">
+          <span class="env-back"></span>
+          <span class="env-letter"><em>Para a Raquel</em><b></b><b></b><b></b></span>
+          <span class="env-front"></span>
+          <span class="env-flap"></span>
+          <span class="env-seal">♥</span>
+        </button>
+      </div>
+      <p class="env-title">Uma carta pra você, Raquel.</p>
+      <p class="env-sub">toque no envelope para abrir</p>
+    </section>
+
+    <!-- 1 · Mensagem digitada -->
+    <section class="scene center" id="s1">
+      <div id="lines1" aria-live="polite"></div>
+      <button class="next" type="button">Continuar</button>
+    </section>
+
+    <!-- 2 · Sete anos -->
+    <section class="scene center" id="s2">
+      <div class="years" id="years" aria-label="Sete anos"></div>
+      <p class="big rv" id="tlA">Sete anos depois…</p>
+      <p class="big gold rv" id="tlB">a gente começou a namorar.</p>
+      <button class="next" type="button">Continuar</button>
+    </section>
+
+    <!-- 3 · Coração -->
+    <section class="scene center" id="s3">
+      <canvas id="heart" aria-label="Coração feito de pontinhos de luz"></canvas>
+      <p class="big rv">Você é a pessoa mais importante pra mim.</p>
+      <p class="note rv">Obrigado por existir na minha vida.</p>
+      <button class="next" type="button">Continuar</button>
+    </section>
+
+    <!-- 4 · Missão -->
+    <section class="scene" id="s4">
+      <div class="game-head">
+        <p id="gameMsg">Uma missãozinha antes da pergunta: pega 7 corações.</p>
+        <div id="meter" aria-live="polite"></div>
+      </div>
+      <div id="arena"></div>
+      <div class="game-foot">
+        <button class="next" type="button">Continuar</button>
+        <button class="ghost" id="skipGame" type="button">Pular missão</button>
+      </div>
+    </section>
+
+    <!-- 5 · A pergunta -->
+    <section class="scene center" id="s5">
+      <p class="to rv">Raquel Veiga Santos,</p>
+      <h2 class="ask rv">Aceita casar comigo daqui a um tempo?</h2>
+      <p class="note rv">Sem pressa. A gente vai no nosso tempo.</p>
+      <div class="answers rv">
+        <button id="yesBtn" type="button">Aceito 💍</button>
+        <button id="noBtn" type="button">Preciso pensar</button>
+      </div>
+    </section>
+
+    <!-- 6 · Sim -->
+    <section class="scene center" id="s6">
+      <div class="ring rv" aria-hidden="true">💍</div>
+      <h2 class="ask rv">Você disse sim.</h2>
+      <p class="final rv">Sete anos de história, e agora o começo de outra. Sem roteiro e sem correria: a gente escreve o resto juntos, do nosso jeito.</p>
+      <p class="final rv">Você é muito especial para mim.<br>Te adoro, princesa. ♥</p>
+      <p class="sign rv">Com todo o meu coração,<strong>Thiago Augusto Santos Duraes</strong></p>
+      <div class="actions rv">
+        <a class="next show" id="waBtn" href="#" target="_blank" rel="noopener" hidden>Avisar o Thiago</a>
+        <button class="ghost" id="again" type="button">Rever do começo</button>
+      </div>
+    </section>
+  </main>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <button id="musicBtn" type="button" aria-label="Tocar música" title="Música" hidden>♪</button>
+  <audio id="audio" src="music/musica.mp3" loop preload="auto"></audio>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
